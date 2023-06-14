@@ -3,60 +3,41 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Blog = () => {
+
+async function getData() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts',{
+   cache:'no-store'
+  })
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+
+const Blog =  async () => {
+  const data = await getData();
   return (
     <div className={styles.mainContainer}>
-      <Link href='/blog/tesslug' className={styles.container}>
-        <div className={styles.imgContainer}>
-        <Image
-         src='https://i.pinimg.com/564x/7d/7a/02/7d7a02a6df18a1dfce7e5d8c74b9a7d7.jpg'
-         alt='image blog' 
-         width={400}
-         height={250}
-         className={styles.img}
-        />
-        </div>
-        <div className={styles.content}>
-          <h1 className={styles.title}>ナツコミ2021開催中！</h1>
-          <p className={styles.description}>対象商品購入でコースタープレゼント‼️】 8月よりナツコミ参加書店にて #マッシュル のコースター配布を開始します！ 
-          <br></br>対象商品を購入してぜひゲットしてくださいね✨ 
-          <br></br>※配布条件・時期は書店により異なります。</p>
-        </div>
-      </Link>
-      <Link href='/blog/tesslug' className={styles.container}>
-        <div className={styles.imgContainer}>
-        <Image
-         src='https://i.pinimg.com/564x/7d/7a/02/7d7a02a6df18a1dfce7e5d8c74b9a7d7.jpg'
-         alt='image blog' 
-         width={400}
-         height={250}
-         className={styles.img}
-        />
-        </div>
-        <div className={styles.content}>
-          <h1 className={styles.title}>ナツコミ2021開催中！</h1>
-          <p className={styles.description}>対象商品購入でコースタープレゼント‼️】 8月よりナツコミ参加書店にて #マッシュル のコースター配布を開始します！ 
-          <br></br>対象商品を購入してぜひゲットしてくださいね✨ 
-          <br></br>※配布条件・時期は書店により異なります。</p>
-        </div>
-      </Link>
-      <Link href='/blog/tesslug' className={styles.container}>
-        <div className={styles.imgContainer}>
-        <Image
-         src='https://i.pinimg.com/564x/7d/7a/02/7d7a02a6df18a1dfce7e5d8c74b9a7d7.jpg'
-         alt='image blog' 
-         width={400}
-         height={250}
-         className={styles.img}
-        />
-        </div>
-        <div className={styles.content}>
-          <h1 className={styles.title}>ナツコミ2021開催中！</h1>
-          <p className={styles.description}>対象商品購入でコースタープレゼント‼️】 8月よりナツコミ参加書店にて #マッシュル のコースター配布を開始します！ 
-          <br></br>対象商品を購入してぜひゲットしてくださいね✨ 
-          <br></br>※配布条件・時期は書店により異なります。</p>
-        </div>
-      </Link>
+      {
+        data.map(item=>(
+        <Link href={`/blog/${item.id}`} className={styles.container} key={item.id}>
+          <div className={styles.imgContainer}>
+          <Image
+           src='https://i.pinimg.com/564x/7d/7a/02/7d7a02a6df18a1dfce7e5d8c74b9a7d7.jpg'
+           alt='image blog' 
+           width={400}
+           height={250}
+           className={styles.img}
+          />
+          </div>
+          <div className={styles.content}>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.description}>{item.body}</p>
+          </div>
+        </Link>
+        ))
+      }
     </div>
   )
 }
