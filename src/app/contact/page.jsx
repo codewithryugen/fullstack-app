@@ -4,6 +4,11 @@ import Image from 'next/image';
 import Button from '@/components/button/Button';
 
 
+export const metadata = {
+  title: 'My portofolio || contact',
+  description: 'this is contact page',
+}
+
 const Contact = () => {
   return (
     <div className={styles.container}>
