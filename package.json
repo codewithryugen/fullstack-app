@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "eslint": "8.42.0",
-    "eslint-config-next": "13.4.5",
+    "eslint-config-next": "13.4.6",
     "mongoose": "6.11.1",
     "next": "13.4.6",
     "next-auth": "^4.22.1",
