@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <h1 className={styles.title}>Lorem ipsum dolor sit.</h1>
-        <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ad sunt accusamus dolores id.</p>
+        <h1 className={styles.title}>Ryugen XD</h1>
+        <p className={styles.description}> ini hanyalah project sederhana yang di buat apa adanya.</p>
         <Button url="/portofolio" text="for wik for wek"/>
       </div>
       <div className={styles.item}>

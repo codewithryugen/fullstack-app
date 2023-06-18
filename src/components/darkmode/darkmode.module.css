@@ -1,7 +1,7 @@
 .container{
     width: 42px;
     height: 24px;
-    border: 1.5px solid rgb(60, 169, 60);
+    border: 1.5px solid #cf0f32;
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@
 .ball{
     width: 15px;
     height: 15px;
-    background-color: rgb(60, 169, 60);
+    background-color: #cf0f32;
     border-radius: 50%;
     position: absolute;
 }
