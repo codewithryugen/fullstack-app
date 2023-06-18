@@ -18,7 +18,7 @@
 }
 
 .link{
-
+    color: white !important;
 }
 
 .logout{
@@ -28,4 +28,20 @@
     color: white;
     cursor: pointer;
     border-radius: 3px;
+}
+
+
+@media only screen and ( max-width:1126px){
+    .container{
+      flex-direction: column;
+    }
+}
+
+@media only screen and ( max-width:625px){
+    .links{
+        z-index: 99;
+        width:100%;
+        flex-direction: column;
+        background:rgb(0,0,0,0.5);
+    }
 }

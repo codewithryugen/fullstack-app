@@ -1,9 +1,18 @@
 .container{
-  padding: 20px;
-  cursor: pointer;
+  user-select: none;
+  text-shadow: .3px .3px .1px #bca0a5;
   background-color: #cf0f32;
-  border: none;
   border-radius: 5px;
   width: max-content;
+  box-shadow: 3px 3px .4px #bbb,-3px -3px .4px #cf0f32;
+}
+
+.btn{
+  padding: 20px;
+  font-weight: bold;
+  font-size:30px;
+  background: transparent;
   color:white;
+  border: none;
+  cursor: pointer;
 }

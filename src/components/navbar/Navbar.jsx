@@ -1,10 +1,11 @@
 "use client"
 
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './navbar.module.css'
 import Darkmode from '../darkmode/Darkmode';
+// import { ThemeContext } from '@/context/ThemeContext';
 
 
 const links = [
@@ -41,13 +42,14 @@ const links = [
 ];
 
 const Navbar = () => {
+  // const {mode} = useContext(ThemeContext);
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>FullStack App</Link>
       <div className={styles.links}>
         <Darkmode/>
         {links.map((link)=>(
-          <Link key={link.id} href={link.path} className={styles.link}>
+          <Link key={link.id} href={link.path} className={styles.link} >
             {link.name}
           </Link>
         ))}

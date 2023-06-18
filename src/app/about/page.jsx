@@ -11,16 +11,17 @@ const About = () => {
         <Image src={blogImg} fill={true} alt='about img' className={styles.image} />
         <div className={styles.imageText}>
           <h1 className={styles.title}>About Me</h1>
-          <h2 className={styles.desc}>Lorem ipsum dolor sit amet consectetur</h2>
+          <h2 className={styles.desc}>introduction</h2>
         </div>
       </div>
       <div className={styles.textContainer}>
         <div className={styles.item}>
-          <h1 className={styles.title}>Lorem, ipsum dolor.</h1>
+          <h1 className={styles.title}>Seseorang yang hanyalah orang</h1>
           <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Ipsa quia voluptate dicta, ut nihil aut ab corrupti, eveniet, delectus optio provident?
-             Rem voluptatem, veniam at dolorum illum voluptatum sapiente inventore?
+            saya tertarik ke dunia IT awal nya berasal dari linux.
+          </p>
+          <p className={styles.desc}>
+           mungkin ini agak lucu bagi sebagian orang , tapi ini nyata
           </p>
         </div>
         <div className={styles.item}>
@@ -35,7 +36,7 @@ const About = () => {
              <br/>- kdmfasa
              <br/> -  anakfasas
           </p>
-          <Button url="/contact" text="contact"/>
+          <Button url="/contact" text="Contact Me"/>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 100px;
+  overflow:hidden;
 }
 
 .item{
@@ -9,11 +10,13 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  position: relative;
 }
 
 .title{
   font-size: 72px;
-  background: linear-gradient(to bottom,#cf0f32,#bbb);
+  text-shadow: .3px .3px .4px #cf0f32,-3px -3px .4px #bbb;
+  /* background: linear-gradient(to bottom,#cf0f32,#bbb); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -22,6 +25,16 @@
 .description{
   font-size: 24px;
   font-weight: 300;
+}
+
+.bg{
+  position: absolute;
+  width:100vw;
+  height:100vh;
+  top: 0;
+  left: 0;
+  background-color: #cf0f32;
+  clip-path: polygon(100% 0%, 100% 52%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 
 .image{
@@ -39,12 +52,45 @@
         transform: translateY(10px);
     }
 }
-/* .button{
-  padding: 20px;
-  cursor: pointer;
-  background-color: #09a27c;
-  border: none;
-  border-radius: 5px;
-  width: max-content;
-  color:white;
-} */
+
+
+@media only screen and ( max-width:1126px){
+  .container{
+    flex-direction: column-reverse;
+  }
+  .item{
+    flex: 1;
+    width:100%;
+    overflow:hidden;
+  }
+  .item:nth-child(2){
+    margin-top:50px;
+    /* background-color: blueviolet; */
+  }
+  .title{
+    font-size:35px;
+  }
+  .item:nth-child(1){
+    margin-bottom:50px;
+  }
+}
+
+@media only screen and ( max-width:500px){
+  .title{
+    /* text-decoration: underline red; */
+    text-shadow: .3px .3px .4px #cf0f32,-3px -3px .4px #bbb;
+  }
+  .description{
+    font-size:15px;
+  }
+  .button{
+    /* background-color: rebeccapurple !important; */
+    font-size:20px !important;
+  }
+}
+
+@media only screen and ( min-width:1123px){
+  .container{
+    width: max-content;
+  }
+}
