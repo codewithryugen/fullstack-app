@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "eslint": "8.53.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "13.5.2",
     "mongoose": "8.0.2",
     "next": "13.4.19",
